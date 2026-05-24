@@ -32,8 +32,17 @@ lmcfg['N_elayers']=18
 RNAlm = Model.RNA2nd(lmcfg)
 
 
-saved_model =  os.path.join(  os.path.dirname(expdir), 'model_hub', 'RCLM','epoch_67000')
-RNAlm.load_state_dict(torch.load(saved_model,map_location=torch.device('cpu')),strict=False)
+CHECKPOINT_ROOT = "."
+saved_model = os.path.join(CHECKPOINT_ROOT, "checkpoints", "drfold2")
+if not os.path.exists(saved_model):
+    raise FileNotFoundError(
+        "RNALM checkpoint not found. Expected: "
+        f"{saved_model}"
+    )
+RNAlm.load_state_dict(torch.load(saved_model,
+                                 map_location=torch.device('cpu'),
+                                 weights_only=True),
+                                strict=False)
 RNAlm.to(device)
 RNAlm.eval()
 lmaadic = {

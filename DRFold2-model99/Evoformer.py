@@ -21,8 +21,6 @@ class EvoBlock(nn.Module):
         self.pair_triend  =EvoPair.TriAttEnd(z_dim)
         self.pair_trans = EvoPair.PairTrans(z_dim)
         self.docheck=docheck
-        if docheck:
-            print('will do checkpoint')
 
     def layerfunc_msa_row(self,m,z):
         return self.msa_row(m,z) + m
