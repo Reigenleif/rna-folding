@@ -1,0 +1,12 @@
+.vscode/
+
+# Data
+data/
+
+checkpoints/
+
+**submission**.csv
+**prediction/
+
+# output files
+results/
