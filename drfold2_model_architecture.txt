@@ -1,0 +1,628 @@
+MSA2XYZ(
+  (msaxyzone): MSA2xyzIteration(
+    (pre_z): ssModule(
+      (emblinear): Linear(in_features=1, out_features=64, bias=True)
+      (block1): zBlock(
+        (pair_triout): TriOut(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (onorm): LayerNorm((32,), eps=1e-05, elementwise_affine=True)
+          (alinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (aglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (bglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=64, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_triin): TriIn(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (onorm): LayerNorm((32,), eps=1e-05, elementwise_affine=True)
+          (alinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (aglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (bglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=64, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_tristart): TriAttStart(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (qlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (klinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (vlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=4, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_triend): TriAttEnd(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (qlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (klinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (vlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=4, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_trans): PairTrans(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (linear1): Linear(
+            (linear): Linear(in_features=64, out_features=128, bias=True)
+          )
+          (linear2): Linear(
+            (linear): Linear(in_features=128, out_features=64, bias=True)
+          )
+        )
+      )
+      (block2): zBlock(
+        (pair_triout): TriOut(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (onorm): LayerNorm((32,), eps=1e-05, elementwise_affine=True)
+          (alinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (aglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (bglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=64, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_triin): TriIn(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (onorm): LayerNorm((32,), eps=1e-05, elementwise_affine=True)
+          (alinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (aglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (bglinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=64, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_tristart): TriAttStart(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (qlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (klinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (vlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=4, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_triend): TriAttEnd(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (qlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (klinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (vlinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (blinear): Linear(
+            (linear): Linear(in_features=64, out_features=4, bias=True)
+          )
+          (glinear): Linear(
+            (linear): Linear(in_features=64, out_features=32, bias=True)
+          )
+          (olinear): Linear(
+            (linear): Linear(in_features=32, out_features=64, bias=True)
+          )
+        )
+        (pair_trans): PairTrans(
+          (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+          (linear1): Linear(
+            (linear): Linear(in_features=64, out_features=128, bias=True)
+          )
+          (linear2): Linear(
+            (linear): Linear(in_features=128, out_features=64, bias=True)
+          )
+        )
+      )
+      (ssatt1): ssAttention(
+        (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (qlinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (klinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (vlinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (glinear): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+        (olinear): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (trans1): PairTrans(
+        (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (linear1): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+        (linear2): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (ssatt2): ssAttention(
+        (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (qlinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (klinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (vlinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (glinear): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+        (olinear): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (trans2): PairTrans(
+        (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (linear1): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+        (linear2): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (ssatt3): ssAttention(
+        (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (qlinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (klinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (vlinear): LinearNoBias(
+          (linear): Linear(in_features=64, out_features=64, bias=False)
+        )
+        (glinear): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+        (olinear): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+      (trans3): PairTrans(
+        (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+        (linear1): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+        (linear2): Linear(
+          (linear): Linear(in_features=64, out_features=64, bias=True)
+        )
+      )
+    )
+    (premsa): PreMSA(
+      (msalinear): Linear(
+        (linear): Linear(in_features=7, out_features=64, bias=True)
+      )
+      (qlinear): Linear(
+        (linear): Linear(in_features=6, out_features=64, bias=True)
+      )
+      (klinear): Linear(
+        (linear): Linear(in_features=6, out_features=64, bias=True)
+      )
+      (slinear): Linear(
+        (linear): Linear(in_features=6, out_features=64, bias=True)
+      )
+      (poslinear): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (poslinear2): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (fm_layer): Linear(
+        (linear): Linear(in_features=640, out_features=64, bias=True)
+      )
+      (lm_layer_s): Linear(
+        (linear): Linear(in_features=512, out_features=64, bias=True)
+      )
+      (lm_layer_z): Linear(
+        (linear): Linear(in_features=128, out_features=64, bias=True)
+      )
+    )
+    (re_emb): RecyclingEmbedder(
+      (linear): Linear(
+        (linear): Linear(in_features=129, out_features=64, bias=True)
+      )
+      (normz): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (normm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (dist_linear): Sequential(
+        (0): Linear(in_features=38, out_features=64, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (hb_linear): Sequential(
+        (0): Linear(in_features=6, out_features=64, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=64, out_features=64, bias=True)
+      )
+    )
+    (evmodel): Evoformer(
+      (evos): ModuleList(
+        (0-15): 16 x EvoBlock(
+          (msa_row): MSARow(
+            (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (qlinear): LinearNoBias(
+              (linear): Linear(in_features=64, out_features=64, bias=False)
+            )
+            (klinear): LinearNoBias(
+              (linear): Linear(in_features=64, out_features=64, bias=False)
+            )
+            (vlinear): LinearNoBias(
+              (linear): Linear(in_features=64, out_features=64, bias=False)
+            )
+            (norm_z): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (zlinear): LinearNoBias(
+              (linear): Linear(in_features=64, out_features=8, bias=False)
+            )
+            (glinear): Linear(
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+            )
+            (olinear): Linear(
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+            )
+          )
+          (msa_col): MSACol(
+            (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (qlinear): LinearNoBias(
+              (linear): Linear(in_features=64, out_features=64, bias=False)
+            )
+            (klinear): LinearNoBias(
+              (linear): Linear(in_features=64, out_features=64, bias=False)
+            )
+            (vlinear): LinearNoBias(
+              (linear): Linear(in_features=64, out_features=64, bias=False)
+            )
+            (glinear): Linear(
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+            )
+            (olinear): Linear(
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+            )
+          )
+          (msa_trans): MSATrans(
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (linear1): Linear(
+              (linear): Linear(in_features=64, out_features=128, bias=True)
+            )
+            (linear2): Linear(
+              (linear): Linear(in_features=128, out_features=64, bias=True)
+            )
+          )
+          (msa_opm): MSAOPM(
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (linear1): Linear(
+              (linear): Linear(in_features=64, out_features=12, bias=True)
+            )
+            (linear2): Linear(
+              (linear): Linear(in_features=64, out_features=12, bias=True)
+            )
+            (linear3): Linear(
+              (linear): Linear(in_features=144, out_features=64, bias=True)
+            )
+          )
+          (pair_triout): TriOut(
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (onorm): LayerNorm((32,), eps=1e-05, elementwise_affine=True)
+            (alinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (blinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (aglinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (bglinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (glinear): Linear(
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+            )
+            (olinear): Linear(
+              (linear): Linear(in_features=32, out_features=64, bias=True)
+            )
+          )
+          (pair_triin): TriIn(
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (onorm): LayerNorm((32,), eps=1e-05, elementwise_affine=True)
+            (alinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (blinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (aglinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (bglinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (glinear): Linear(
+              (linear): Linear(in_features=64, out_features=64, bias=True)
+            )
+            (olinear): Linear(
+              (linear): Linear(in_features=32, out_features=64, bias=True)
+            )
+          )
+          (pair_tristart): TriAttStart(
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (qlinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (klinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (vlinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (blinear): Linear(
+              (linear): Linear(in_features=64, out_features=4, bias=True)
+            )
+            (glinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (olinear): Linear(
+              (linear): Linear(in_features=32, out_features=64, bias=True)
+            )
+          )
+          (pair_triend): TriAttEnd(
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (qlinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (klinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (vlinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (blinear): Linear(
+              (linear): Linear(in_features=64, out_features=4, bias=True)
+            )
+            (glinear): Linear(
+              (linear): Linear(in_features=64, out_features=32, bias=True)
+            )
+            (olinear): Linear(
+              (linear): Linear(in_features=32, out_features=64, bias=True)
+            )
+          )
+          (pair_trans): PairTrans(
+            (norm): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+            (linear1): Linear(
+              (linear): Linear(in_features=64, out_features=128, bias=True)
+            )
+            (linear2): Linear(
+              (linear): Linear(in_features=128, out_features=64, bias=True)
+            )
+          )
+        )
+      )
+    )
+    (slinear): Linear(
+      (linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+  (msa_predor): Linear(
+    (linear): Linear(in_features=64, out_features=6, bias=True)
+  )
+  (pdis_predor): Linear(
+    (linear): Linear(in_features=64, out_features=38, bias=True)
+  )
+  (cdis_predor): Linear(
+    (linear): Linear(in_features=64, out_features=38, bias=True)
+  )
+  (ndis_predor): Linear(
+    (linear): Linear(in_features=64, out_features=38, bias=True)
+  )
+  (hb_predor): Linear(
+    (linear): Linear(in_features=64, out_features=6, bias=True)
+  )
+  (slinear): Linear(
+    (linear): Linear(in_features=64, out_features=64, bias=True)
+  )
+  (structurenet): StructureModule(
+    (layernorm_s): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+    (layernorm_z): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+    (ipa): InvariantPointAttention(
+      (liner_nb_q1): LinearNoBias(
+        (linear): Linear(in_features=64, out_features=1024, bias=False)
+      )
+      (liner_nb_k1): LinearNoBias(
+        (linear): Linear(in_features=64, out_features=1024, bias=False)
+      )
+      (liner_nb_v1): LinearNoBias(
+        (linear): Linear(in_features=64, out_features=1024, bias=False)
+      )
+      (liner_nb_q2): LinearNoBias(
+        (linear): Linear(in_features=64, out_features=768, bias=False)
+      )
+      (liner_nb_k2): LinearNoBias(
+        (linear): Linear(in_features=64, out_features=768, bias=False)
+      )
+      (liner_nb_v3): LinearNoBias(
+        (linear): Linear(in_features=64, out_features=1152, bias=False)
+      )
+      (liner_nb_z): LinearNoBias(
+        (linear): Linear(in_features=64, out_features=64, bias=False)
+      )
+      (lastlinear1): Linear(
+        (linear): Linear(in_features=4096, out_features=64, bias=True)
+      )
+      (lastlinear2): Linear(
+        (linear): Linear(in_features=1024, out_features=64, bias=True)
+      )
+      (lastlinear3): Linear(
+        (linear): Linear(in_features=1152, out_features=64, bias=True)
+      )
+      (gama): ParameterList(  (0): Parameter containing: [torch.float32 of size 64])
+      (cos_f): CosineSimilarity()
+    )
+    (transition): TransitionModule(
+      (norm1): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+      (linear1): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear2): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear3): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (norm2): LayerNorm((64,), eps=1e-05, elementwise_affine=True)
+    )
+    (bbupdate): BackboneUpdate(
+      (linear): Linear(
+        (linear): Linear(in_features=64, out_features=6, bias=True)
+      )
+    )
+    (torsionnet): TorsionNet(
+      (linear1): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear2): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear3): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear4): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear5): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear6): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear7_1): Linear(
+        (linear): Linear(in_features=64, out_features=1, bias=True)
+      )
+      (linear7_2): Linear(
+        (linear): Linear(in_features=64, out_features=2, bias=True)
+      )
+      (linear7_3): Linear(
+        (linear): Linear(in_features=64, out_features=2, bias=True)
+      )
+    )
+    (lddt_preder): lddtpredictor(
+      (lineara): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linearb): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear2): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear3): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear4): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear5): Linear(
+        (linear): Linear(in_features=3, out_features=64, bias=True)
+      )
+      (linear6): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear7): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (linear8): Linear(
+        (linear): Linear(in_features=64, out_features=64, bias=True)
+      )
+      (lastlinear): Linear(
+        (linear): Linear(in_features=64, out_features=5, bias=True)
+      )
+    )
+  )
+)
