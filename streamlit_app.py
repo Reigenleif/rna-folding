@@ -9,7 +9,7 @@ import streamlit as st
 
 from model_initiator import load_bundle_from_artifact, predict_coords
 
-DEFAULT_ARTIFACT = Path("results/finetuned_lora_artifact.pkl")
+DEFAULT_ARTIFACT = Path("results/finetune_artifact.pkl")
 DEFAULT_FALLBACK_WEIGHTS = Path("DRFold2-model99") / "model_19"
 
 SAMPLE_EXAMPLES = {
@@ -61,7 +61,7 @@ def make_structure_figure(coords: np.ndarray, seq: str) -> go.Figure:
             text=[str(i) for i in residues],
             textposition="top center",
             marker=dict(size=6, color=colors, colorscale="Viridis", showscale=True),
-            line=dict(color="#4f7cff", width=5),
+            line=dict(color="#000000", width=5),
             name="Residues",
         )
     )
@@ -91,7 +91,6 @@ def make_structure_figure(coords: np.ndarray, seq: str) -> go.Figure:
         ),
         margin=dict(l=0, r=0, t=40, b=0),
         height=720,
-        legend=dict(orientation="h"),
     )
     return fig
 
@@ -134,8 +133,8 @@ def main() -> None:
     seq = st.text_area("RNA sequence", key="rna_sequence", height=120)
     artifact_path = st.sidebar.text_input("Artifact pickle", value=str(DEFAULT_ARTIFACT))
     device = st.sidebar.selectbox("Device", ["cpu", "cuda"], index=0)
-    atom_index = st.sidebar.selectbox("Atom index", ["C4'", "P", "N1/N9"], index=0)
-    atom_map = {"P": 0, "C4'": 1, "N1/N9": 2}
+    atom_index = "C1"
+    atom_map = {"C1": 0}
 
     if not sequence_is_valid(seq):
         st.info("Use only A, C, G, U, or T characters.")
